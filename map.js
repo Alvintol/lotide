@@ -26,7 +26,14 @@ const map = (array, callback) => {
 };
 
 const results1 = map(words, word => word[0]);
-console.log(results1);
+const result2 = word => word[word.length - 1];
+const result3 = word => word + '+ADDED';
+console.log('map test 1:', results1);
+console.log('map test 2:', map(words, result2));
+console.log('map test 3:', map(words, result3));
+
+
+
 
 const eqArrays = (first, second) => {
   let answer = true;
