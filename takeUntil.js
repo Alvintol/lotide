@@ -18,7 +18,7 @@ const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 
 //callback
 const results1 = takeUntil(data1, x => x < 0);
-console.log('original test:',results1);
+console.log('original test:', results1);
 
 
 
@@ -43,6 +43,6 @@ const assertArraysEqual = (first, second) => {
   eqArrays(first, second) ? console.log(`✅ Assertion Passed: [${first}] === [${second}] ✅`) : console.log(`🛑 Assertion Failed: [${first}] !== [${second}] 🛑`);
 };
 
-assertArraysEqual(takeUntil(data1, negative), [ 1, 2, 5, 7, 2 ]);
-assertArraysEqual(takeUntil(data1, x => x < 0), [ 1, 2, 5, 7, 2 ]);
-assertArraysEqual(takeUntil(data1, five), [ 1, 2 ]);
+assertArraysEqual(takeUntil(data1, negative), [1, 2, 5, 7, 2]);
+assertArraysEqual(takeUntil(data1, x => x < 0), [1, 2, 5, 7, 2]);
+assertArraysEqual(takeUntil(data1, five), [1, 2]);
