@@ -1,14 +1,10 @@
-const chai = require('chai');
 const eqObjects = require('../eqObjects');
-const assert = chai.assert;
+const assertEqual = require('../assertEqual')
 
-describe('eqObjects()', () => {
-
-  it('should return false if objectA length is not equal to obejctB', () => {
-    const objectA = {a: 1, b: 2};
-    const objectB = {a: 1, b: 2, c: 3};
-    const eqObjects = eqObjects(objectA, objectB);
-    assert.isFalse(eqObjects);
-  });
-  
-});
+assertEqual(eqObjects({ a: "2", b: "1" }, { b: "2", a: "1" }), true);
+assertEqual(eqObjects({ c: "1", d: ["2", 3] }, { d: ["2", 3], c: "1" }), true);
+assertEqual(eqObjects({ c: "1", d: ["2", 3] }, { c: "1", d: ["2", 3, 4] }), false);
+assertEqual(eqObjects({ a: "2", b: "1" }, { a: "1", b: "2", c: "3" }), false);
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
