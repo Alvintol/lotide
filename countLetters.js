@@ -1,10 +1,5 @@
-const assertEqual = (actual, expected) => {
-  if (actual === expected) {
-    console.log(`✅ Assertion Passed: [${actual}] === [${expected}] ✅`);
-  } else {
-    console.log(`🛑 Assertion Failed: [${actual}] !== [${expected}] 🛑`);
-  }
-};
+const assertEqual = require('./assertEqual');
+const assert = require('chai').assert;
 
 const countLetters = (sentence) => {
   //return a count of each letter in the sentence

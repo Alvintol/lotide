@@ -1,13 +1,3 @@
-const eqArrays = (first, second) => {
-  let answer = true;
-  for (let a = 0; a < first.length; a++) {
-    if (first[a] !== second[a]) {
-      answer = false;
-    }
-  } return answer;
-};
-const assertArraysEqual = require('./assertArraysEqual')
-
 const middle = (target) => {
   const length = target.length;
   let targetMiddle = [];
