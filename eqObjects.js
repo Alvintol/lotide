@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual')
-
 const eqObjects = (object1, object2) => {
   let result = false;
   if (Object.keys(object1).length !== Object.keys(object2).length) {
@@ -15,6 +13,5 @@ const eqObjects = (object1, object2) => {
   }
   return result;
 };
-
 
 module.exports = eqObjects;
