@@ -6,9 +6,9 @@ const eqObjects = (object1, object2) => {
   }
   if (typeof object1 === 'object' && typeof object2 !== 'object'||
   typeof object1 !== 'object' && typeof object2 === 'object'||
-  Object.keys(object1).length !== Object.keys(object2).length) {{
+  Object.keys(object1).length !== Object.keys(object2).length) {
     return false;
-  }}
+  }
   for (const key in object1) {
     if (!Object.keys(object2).includes(key) ||
     !eqObjects(object1[key], object2[key])){
